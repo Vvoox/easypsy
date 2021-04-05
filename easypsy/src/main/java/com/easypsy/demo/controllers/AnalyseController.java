@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@Controller
 @RequestMapping("/analyse")
 @RequiredArgsConstructor
+@RestController
 public class AnalyseController {
 
     private final AnalyseServices analyseServices;
