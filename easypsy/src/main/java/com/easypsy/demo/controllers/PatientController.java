@@ -34,12 +34,10 @@ public class PatientController {
 
     @PostMapping("/{id}/modify")
     private Patient modifyPatient(@PathVariable long id ,@RequestBody Patient patient){
-        return patientServices.modifyPatient(id,patient);
-    }
+        return patientServices.modifyPatient(id,patient); }
 
     @DeleteMapping("/{id}/delete")
     private Map<String, String> deletePatient(@PathVariable long id){
-        return patientServices.deletePatient(id);
-    }
+        return patientServices.deletePatient(id); }
 
 }
