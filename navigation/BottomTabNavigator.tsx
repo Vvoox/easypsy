@@ -27,7 +27,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Profil"
-        component={TabTwoNavigator}
+        component={ProfilNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -60,7 +60,7 @@ function TabOneNavigator() {
 
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
-function TabTwoNavigator() {
+function ProfilNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen

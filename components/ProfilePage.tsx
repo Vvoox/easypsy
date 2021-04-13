@@ -21,9 +21,9 @@ export default function ProfilePage({ path }: { path: string }) {
             <Image style={styles.avatar}
                    source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
 
-            <Text style={styles.name}>John Doe </Text>
-            <Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
-            <Text style={styles.userInfo}>Florida </Text>
+            <Text style={styles.name}>Khalil Daoulat </Text>
+            <Text style={styles.userInfo}>daoulat.khalil@gmail.com</Text>
+            <Text style={styles.userInfo}>Morocco</Text>
           </View>
         </View>
 
@@ -37,32 +37,32 @@ export default function ProfilePage({ path }: { path: string }) {
             </View>
           </View>
 
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/administrator-male.png'}}/>
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>Settings</Text>
-            </View>
-          </View>
+          {/*<View style={styles.item}>*/}
+          {/*  <View style={styles.iconContent}>*/}
+          {/*    <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/administrator-male.png'}}/>*/}
+          {/*  </View>*/}
+          {/*  <View style={styles.infoContent}>*/}
+          {/*    <Text style={styles.info}>Settings</Text>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
 
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/filled-like.png'}}/>
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>News</Text>
-            </View>
-          </View>
+          {/*<View style={styles.item}>*/}
+          {/*  <View style={styles.iconContent}>*/}
+          {/*    <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/filled-like.png'}}/>*/}
+          {/*  </View>*/}
+          {/*  <View style={styles.infoContent}>*/}
+          {/*    <Text style={styles.info}>News</Text>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
 
-          <View style={styles.item}>
-            <View style={styles.iconContent}>
-              <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/facebook-like.png'}}/>
-            </View>
-            <View style={styles.infoContent}>
-              <Text style={styles.info}>Shop</Text>
-            </View>
-          </View>
+          {/*<View style={styles.item}>*/}
+          {/*  <View style={styles.iconContent}>*/}
+          {/*    <Image style={styles.icon} source={{uri: 'https://img.icons8.com/color/70/000000/facebook-like.png'}}/>*/}
+          {/*  </View>*/}
+          {/*  <View style={styles.infoContent}>*/}
+          {/*    <Text style={styles.info}>Shop</Text>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
 
         </View>
       </View>
@@ -78,7 +78,7 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
   },
   header:{
       backgroundColor: "#DCDCDC",
@@ -106,9 +106,9 @@ const styles = StyleSheet.create({
       fontWeight:'600',
     },
     body:{
-      backgroundColor: "#778899",
+      // backgroundColor: "#778899",
       height:500,
-      alignItems:'center',
+      alignItems:'flex-start',
     },
     item:{
       flexDirection : 'row',
