@@ -9,10 +9,12 @@ export default class LoginNavigator extends React.Component {
     }
     goHome(){
     }
+
+
     render(){
         return (
             <View style={styles.container}>
-                <Image style={{height:110,width:110}} source={require('../assets/images/pills.png')} />
+                <Image style={{height:80,width:80}} source={require('../assets/images/checklist.png')} />
                 <Text style={styles.logo}>EasyPsy</Text>
                 <View style={styles.inputView} >
                     <TextInput
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         fontSize:50,
         fontFamily:'American Typewriter',
-        color:"#a33a39",
+        color:"rgba(19,18,18,0.57)",
         marginBottom:40
     },
     inputView:{
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     },
     loginBtn:{
         width:"80%",
-        backgroundColor:"#a33a39",
+        backgroundColor:"#131111",
         borderRadius:25,
         height:50,
         alignItems:"center",
