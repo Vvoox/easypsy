@@ -1,7 +1,6 @@
 package com.easypsy.demo.controllers;
 
 
-import com.easypsy.demo.models.Analyse;
 import com.easypsy.demo.models.Doctor;
 import com.easypsy.demo.services.DoctorServices;
 import lombok.RequiredArgsConstructor;

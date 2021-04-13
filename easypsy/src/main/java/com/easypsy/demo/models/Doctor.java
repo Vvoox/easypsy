@@ -28,8 +28,8 @@ public class Doctor {
     private String phoneNumber;
     private String address;
 
-    @OneToMany
-    private List<Patient> patientList;
+//    @OneToMany
+//    private List<Patient> patientList;
 
     @CreationTimestamp
     private LocalDate createDate;

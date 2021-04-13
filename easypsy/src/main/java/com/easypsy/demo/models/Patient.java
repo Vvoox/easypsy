@@ -30,8 +30,8 @@ public class Patient {
     @ManyToOne
     private Doctor doctor;
 
-    @OneToMany
-    private List<Analyse> analyseList;
+//    @OneToMany
+//    private List<Scale> scales;
 
     @CreationTimestamp
     private LocalDate createDate;

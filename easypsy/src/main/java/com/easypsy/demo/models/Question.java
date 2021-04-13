@@ -22,9 +22,9 @@ public class Question {
     private long id;
     private String question;
     private long score;
-    private QuestionsState questionsState;
+//    private QuestionsState questionsState;
 
     @ManyToOne
-    private Test test;
+    private Scale scale;
 
 }

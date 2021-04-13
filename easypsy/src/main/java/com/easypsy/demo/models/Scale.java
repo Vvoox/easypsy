@@ -17,17 +17,21 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Analyse {
+public class Scale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String analyseName;
+    private String scaleName;
     private LocalDate date;
     private String address;
+    private long score;
 
-    @OneToMany
-    private List<Test> test;
+    @ManyToOne
+    private Patient patient;
+
+//    @OneToMany
+//    private List<Question> questionList;
 
     @CreationTimestamp
     private LocalDate createDate;
