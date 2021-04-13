@@ -6,7 +6,7 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import {BottomTabParamList, LoginParamList, TabOneParamList, TabTwoParamList} from '../types';
 import ProfileScreen from "../screens/ProfileScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -22,14 +22,21 @@ export default function BottomTabNavigator() {
         name="Dashboard"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
+        <BottomTab.Screen
+            name="Profil"
+            component={ProfilNavigator}
+            options={{
+                tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+            }}
+        />
       <BottomTab.Screen
-        name="Profil"
+        name="Parameter"
         component={ProfilNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="settings" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -45,6 +52,7 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
+const loginStack = createStackNavigator<LoginParamList>();
 
 function TabOneNavigator() {
   return (
@@ -58,16 +66,28 @@ function TabOneNavigator() {
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const profilStack = createStackNavigator<TabTwoParamList>();
 
 function ProfilNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
+    <profilStack.Navigator>
+      <profilStack.Screen
         name="Profil"
         component={ProfileScreen}
         options={{ headerTitle: 'Profil' }}
       />
-    </TabTwoStack.Navigator>
+    </profilStack.Navigator>
   );
+}
+
+function LoginNavigator() {
+    return (
+        <loginStack.Navigator>
+            <loginStack.Screen
+                name="login"
+                component={TabOneScreen}
+                options={{ headerTitle: 'Dashboard' }}
+            />
+        </loginStack.Navigator>
+    );
 }

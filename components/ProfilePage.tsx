@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     },
     iconContent:{
       flex:1,
-      alignItems:'flex-end',
+      alignItems:'flex-start',
       paddingRight:5,
     },
     icon:{
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
       marginTop:20,
     },
     info:{
+    alignItems:'flex-start',
       fontSize:18,
       marginTop:20,
       color: "#FFFFFF",
