@@ -8,6 +8,7 @@ export type BottomTabParamList = {
   TabTwo: undefined;
   Dashboard:undefined;
   Settings:undefined;
+  Profil:undefined;
 };
 
 export type TabOneParamList = {
@@ -16,6 +17,7 @@ export type TabOneParamList = {
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  ProfileScreen: undefined;
   Settings:undefined;
+  Profil:undefined;
 };

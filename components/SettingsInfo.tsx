@@ -7,6 +7,10 @@ import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 import { SectionGrid } from 'react-native-super-grid';
 import { FlatGrid } from 'react-native-super-grid';
+import  { Component } from 'react';
+import {
+  Image,
+} from 'react-native';
 
 export default function SettingsInfo({ path }: { path: string }) {
   const [items, setItems] = React.useState([

@@ -6,8 +6,8 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import ProfileScreen from "../screens/ProfileScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -26,7 +26,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Settings"
+        name="Profil"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
@@ -64,9 +64,9 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="Settings"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Settings' }}
+        name="Profil"
+        component={ProfileScreen}
+        options={{ headerTitle: 'Profil' }}
       />
     </TabTwoStack.Navigator>
   );
