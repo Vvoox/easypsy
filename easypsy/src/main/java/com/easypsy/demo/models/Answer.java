@@ -1,7 +1,6 @@
 package com.easypsy.demo.models;
 
 
-import com.easypsy.demo.enumerations.QuestionsState;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,17 +13,17 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Question {
+public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String question;
-    private QuestionsState questionsState;
+    private String answer;
+    private int score;
 
-//    @OneToOne
-//    private Answer answer;
 
+//    @ManyToOne
+//    private Formule formule;
 
 
 

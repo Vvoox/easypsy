@@ -27,8 +27,12 @@ public class Patient {
     private String phoneNumber;
     private String address;
 
-    @ManyToOne
-    private Doctor doctor;
+
+    @OneToMany
+    private List<Diagnosis> diagnosis;
+
+//    @ManyToOne
+//    private Doctor doctor;
 
 //    @OneToMany
 //    private List<Scale> scales;

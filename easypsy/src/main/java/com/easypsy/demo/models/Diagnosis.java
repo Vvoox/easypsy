@@ -1,6 +1,7 @@
 package com.easypsy.demo.models;
 
 
+import com.easypsy.demo.enumerations.TypeState;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,25 +18,21 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Doctor {
+public class Diagnosis {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
-    private String address;
+    private String name;
+    private LocalDate date;
+
 
     @OneToMany
-    private List<Patient> patientList;
+    private List<Scale> scale;
 
     @CreationTimestamp
     private LocalDate createDate;
 
     @UpdateTimestamp
     private LocalDate modifiedDate;
-
 }
-

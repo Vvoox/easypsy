@@ -1,6 +1,7 @@
 package com.easypsy.demo.models;
 
 
+import com.easypsy.demo.enumerations.TypeState;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,14 +25,16 @@ public class Scale {
     private long id;
     private String scaleName;
     private LocalDate date;
-    private String address;
-    private long score;
+    private long finalScore;
+    private TypeState type;
 
-    @ManyToOne
-    private Patient patient;
+//    @ManyToOne
+//    private Diagnosis diagnosis;
 
-//    @OneToMany
-//    private List<Question> questionList;
+
+    @OneToMany
+    private List<Formule> formules;
+
 
     @CreationTimestamp
     private LocalDate createDate;
