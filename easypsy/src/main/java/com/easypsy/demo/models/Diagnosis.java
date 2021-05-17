@@ -24,7 +24,7 @@ public class Diagnosis {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private LocalDate date;
+//    private LocalDate date;
 
 
     @OneToMany
