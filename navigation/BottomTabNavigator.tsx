@@ -19,7 +19,7 @@ export default function BottomTabNavigator() {
       initialRouteName="Dashboard"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="Dashboard"
+        name="Accueil"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
@@ -58,9 +58,9 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="Dashboard"
+        name="Accueil"
         component={TabOneScreen}
-        options={{ headerTitle: 'Dashboard' }}
+        options={{ headerTitle: 'Accueil' }}
       />
     </TabOneStack.Navigator>
   );

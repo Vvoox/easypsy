@@ -1,11 +1,12 @@
 import * as WebBrowser from 'expo-web-browser';
 import React, {useState} from 'react';
-import { Button, TouchableOpacity} from 'react-native';
+import {Button, TextInput, TouchableOpacity} from 'react-native';
 
 import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 import { Alert, Modal, StyleSheet, TouchableHighlight } from 'react-native';
+import Dialog from "react-native-dialog";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -27,52 +28,83 @@ export default function EditScreenInfo({ path }: { path: string }) {
           ],
           { cancelable: false }
       );
+
+  const [visible, setVisible] = useState(false);
+
+  const showDialog = () => {
+    setVisible(true);
+  };
+
+  const handleCancel = () => {
+    setVisible(false);
+  };
+
+  const handleAdd = () => {
+    // The user has pressed the "Delete" button, so here you can do your own logic.
+    // ...Your logic
+    setVisible(false);
+  };
   return (
     <View>
       <View style={styles.getStartedContainer}>
-        <Button title="Add Patient" onPress={createThreeButtonAlert} />
-        <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.');
-            }}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>Hello World!</Text>
+        {/*<Button title="Add Patient" onPress={createThreeButtonAlert} />*/}
+        {/*<Modal*/}
+        {/*    animationType="slide"*/}
+        {/*    transparent={true}*/}
+        {/*    visible={modalVisible}*/}
+        {/*    onRequestClose={() => {*/}
+        {/*      Alert.alert('Modal has been closed.');*/}
+        {/*    }}>*/}
+        {/*  <View style={styles.centeredView}>*/}
+        {/*    <View style={styles.modalView}>*/}
+        {/*      <Text style={styles.modalText}>Patient Name</Text>*/}
+        {/*      <TextInput placeholder="Enter something..."*/}
+        {/*                 style={styles.modalInput} />*/}
+        {/*      <Text style={styles.modalText}>Maladie</Text>*/}
+        {/*      <TextInput placeholder="Enter something..."*/}
+        {/*                 style={styles.modalInput} />*/}
+        {/*      <TouchableHighlight*/}
+        {/*          style={{ ...styles.openButton, backgroundColor: '#2196F3' }}*/}
+        {/*          onPress={() => {*/}
+        {/*            setModalVisible(!modalVisible);*/}
+        {/*          }}>*/}
+        {/*        <Text style={styles.textStyle}>Valider</Text>*/}
+        {/*          /!*<input>Nom</input>*!/*/}
+        {/*      </TouchableHighlight>*/}
 
-              <TouchableHighlight
-                  style={{ ...styles.openButton, backgroundColor: '#2196F3' }}
-                  onPress={() => {
-                    setModalVisible(!modalVisible);
-                  }}>
-                <Text style={styles.textStyle}>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </Modal>
+        {/*    </View>*/}
+        {/*  </View>*/}
+        {/*</Modal>*/}
 
-        <TouchableHighlight
-            style={styles.openButton}
-            onPress={() => {
-              setModalVisible(true);
-            }}>
-          <Text style={styles.textStyle}>Show Modal</Text>
-        </TouchableHighlight>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          Welcome Doctor
-        </Text>
+        {/*<TouchableHighlight*/}
+        {/*    style={styles.openButton}*/}
+        {/*    onPress={() => {*/}
+        {/*      setModalVisible(true);*/}
+        {/*    }}>*/}
+        {/*  <Text style={styles.textStyle}>Ajouter Dossier</Text>*/}
+        {/*</TouchableHighlight>*/}
 
+      </View>
+
+
+
+      <View style={styles.helpContainer}>
+        <Button color="#007ff9" title="Ajouter Dossier" onPress={showDialog} />
+        <Dialog.Container visible={visible}>
+          <Dialog.Title>Information du dossier</Dialog.Title>
+          {/*<Dialog.Title>Nom du Patient</Dialog.Title>*/}
+          <Dialog.Input label="nom du patient"/>
+          <Dialog.Input label="maladie"/>
+          <Dialog.Description>Ajouter le dossier du patient ici : </Dialog.Description>
+          <Dialog.Button label="Annuler" onPress={handleCancel} />
+          <Dialog.Button label="Valider" onPress={handleAdd} />
+        </Dialog.Container>
       </View>
 
       <View style={styles.helpContainer}>
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-            Here you can add Patient to do your tests.
+            Aucun dossier disponible
           </Text>
         </TouchableOpacity>
       </View>
@@ -164,7 +196,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   openButton: {
-    backgroundColor: '#F194FF',
+    backgroundColor: '#1749cb',
     borderRadius: 20,
     padding: 10,
     elevation: 2,
@@ -175,6 +207,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   modalText: {
+    color:"#13519c",
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  modalInput: {
+    color:"#13519c",
+    // backgroundColor:"#282b2d",
     marginBottom: 15,
     textAlign: 'center',
   },

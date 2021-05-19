@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import {Button} from "react-native-paper";
 
 export default class LoginNavigator extends React.Component {
     state={
@@ -8,6 +9,7 @@ export default class LoginNavigator extends React.Component {
         password:""
     }
     goHome(){
+        console.log("login");
     }
 
 
@@ -35,7 +37,8 @@ export default class LoginNavigator extends React.Component {
                     <Text style={styles.forgot}>Forgot Password?</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.loginBtn}>
-                    <Text style={styles.loginText} >LOGIN</Text>
+                    <Text style={styles.loginText} onPress={() =>  {this.goHome()} } >Login</Text>
+                    {/*<Button onPress={this.goHome} >Login</Button>*/}
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text style={styles.loginText}>Signup</Text>
